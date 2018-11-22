@@ -30,8 +30,7 @@ class Mazo {
 				array_push($this->cartas, new Carta("K", 1));
 				array_push($this->cartas, new Carta("K", 2));
 				array_push($this->cartas, new Carta("K", 3));
-				array_push($this->cartas, new Carta("Joker", NULL));
-				array_push($this->cartas, new Carta("Joker", NULL));
+				array_push($this->cartas, new Carta("Joker", NULL), new Carta("Joker", NULL));
 			break;
 			case "españolas":
 				$this->cantidad = 50;

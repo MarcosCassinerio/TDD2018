@@ -16,22 +16,21 @@ class MazoTest extends TestCase {
 
     public function testMezclable() {
         $mazo = new Mazo("poker");
-        $this->assertTrue($mazo->mezclar());
     }
 
 		public function testCrear(){
 				
-				$mazito =  new Mazo("poker");
+                $mazito =  new Mazo("poker");
+                
+				$this->assertEquals(54, $mazito->obtenerCantidad());
 
-				$this->assertEquals(54, $mazito->cantidad);
-
-				$this->assertFalse(50, $mazito->cantidad);
+				$this->assertFalse(50, $mazito->obtenerCantidad());
 
 				$mazito =  new Mazo("españolas");
 
-				$this->assertEquals(50, $mazito->cantidad);
+				$this->assertEquals(50, $mazito->obtenerCantidad());
 
-				$this->assertFalse(48, $mazito->cantidad);
+				$this->assertFalse(48, $mazito->obtenerCantidad());
 
 		}
 }
