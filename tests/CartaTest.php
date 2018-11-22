@@ -22,6 +22,8 @@ class CartaTest extends TestCase {
         $this->assertEquals($carta5->verPalo(), "Diamantes");
         $this->assertEquals($carta6->verPalo(), "Tréboles");
         $this->assertEquals($carta7->verPalo(), "Corazones");
+        $carta8 = new Carta(3, "A", "algoMas");
+        $this->assertTrue(($carta8->verPalo()) == null);
     }
 
     public function testNumero(){
