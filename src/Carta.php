@@ -6,7 +6,7 @@ class Carta {
   public $palo; 
   public $numero;
   public $tipo;
-	public function __construct($numero, $palo, $tipo){
+	public function __construct($palo, $numero, $tipo){
 		$this->palo = $palo;
 		settype($this->palo, "integer");
 		$this->numero = $numero;
