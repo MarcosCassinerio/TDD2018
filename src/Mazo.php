@@ -72,7 +72,7 @@ class Mazo {
 	}
 
 	public function cortar(){
-		$rando=rand(0,$this->cantidad);
+		$rando=rand(0,$this->obtenerCantidad());
 		for($i=0;$i<$rando;$i++){
 			$this->agregar($this->obtenerCarta());
 		}
