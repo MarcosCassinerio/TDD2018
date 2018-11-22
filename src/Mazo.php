@@ -4,40 +4,41 @@ namespace TDD;
 
 class Mazo {
 	
-	protected $cartas;
+	protected $cartas = [];
 	public $cantidad;
 
 	public function __construct($tipo){
 		switch($tipo){
 			case "poker":
 				$this->cantidad = 54;
-				array_push($this->cartas, new Carta("A", 0));
-				array_push($this->cartas, new Carta("A", 1));
-				array_push($this->cartas, new Carta("A", 2));
-				array_push($this->cartas, new Carta("A", 3));
+				array_push($this->cartas, new Carta("A", 0, $tipo));
+				array_push($this->cartas, new Carta("A", 1, $tipo));
+				array_push($this->cartas, new Carta("A", 2, $tipo));
+				array_push($this->cartas, new Carta("A", 3, $tipo));
 				for($i=0;$i<36;$i++){
-					array_push($this->cartas, new Carta(($i%9)+2,i/9));
+					array_push($this->cartas, new Carta(($i%9)+2,$i/9, $tipo));
 				}
-				array_push($this->cartas, new Carta("J", 0));
-				array_push($this->cartas, new Carta("J", 1));
-				array_push($this->cartas, new Carta("J", 2));
-				array_push($this->cartas, new Carta("J", 3));
-				array_push($this->cartas, new Carta("Q", 0));
-				array_push($this->cartas, new Carta("Q", 1));
-				array_push($this->cartas, new Carta("Q", 2));
-				array_push($this->cartas, new Carta("Q", 3));
-				array_push($this->cartas, new Carta("K", 0));
-				array_push($this->cartas, new Carta("K", 1));
-				array_push($this->cartas, new Carta("K", 2));
-				array_push($this->cartas, new Carta("K", 3));
-				array_push($this->cartas, new Carta("Joker", NULL), new Carta("Joker", NULL));
+				array_push($this->cartas, new Carta("J", 0, $tipo));
+				array_push($this->cartas, new Carta("J", 1, $tipo));
+				array_push($this->cartas, new Carta("J", 2, $tipo));
+				array_push($this->cartas, new Carta("J", 3, $tipo));
+				array_push($this->cartas, new Carta("Q", 0, $tipo));
+				array_push($this->cartas, new Carta("Q", 1, $tipo));
+				array_push($this->cartas, new Carta("Q", 2, $tipo));
+				array_push($this->cartas, new Carta("Q", 3, $tipo));
+				array_push($this->cartas, new Carta("K", 0, $tipo));
+				array_push($this->cartas, new Carta("K", 1, $tipo));
+				array_push($this->cartas, new Carta("K", 2, $tipo));
+				array_push($this->cartas, new Carta("K", 3, $tipo));
+				array_push($this->cartas, new Carta("Joker", NULL, $tipo));
+				array_push($this->cartas, new Carta("Joker", NULL, $tipo));
 			break;
 			case "españolas":
 				$this->cantidad = 50;
 				for($i=0;$i<48;$i++){
-					array_push($this->cartas, new Carta(($i%12)+1,$i/12));
+					array_push($this->cartas, new Carta(($i%12)+1,$i/12, $tipo));
 				}
-				array_push($this->cartas, new Carta("Comodin",NULL), new Carta("Comodin",NULL));
+				array_push($this->cartas, new Carta("Comodin",NULL, $tipo), new Carta("Comodin",NULL, $tipo));
 			break;
 		}
 		$this->mezclar();

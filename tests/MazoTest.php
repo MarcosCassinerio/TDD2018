@@ -16,21 +16,50 @@ class MazoTest extends TestCase {
 
     public function testMezclable() {
         $mazo = new Mazo("poker");
+        $mazo2 = $mazo->mezclar();
+        $this->assertNotEquals($mazo,$mazo2);
     }
 
-		public function testCrear(){
-				
-                $mazito =  new Mazo("poker");
-                
-				$this->assertEquals(54, $mazito->obtenerCantidad());
+    public function testCrear(){
+            
+        $mazito =  new Mazo("poker");
 
-				$this->assertFalse(50, $mazito->obtenerCantidad());
+        $this->assertEquals(54, $mazito->cantidad);
 
-				$mazito =  new Mazo("españolas");
+        $this->assertNotEquals(50, $mazito->cantidad);
 
-				$this->assertEquals(50, $mazito->obtenerCantidad());
+        $mazito =  new Mazo("españolas");
 
-				$this->assertFalse(48, $mazito->obtenerCantidad());
+        $this->assertEquals(50, $mazito->cantidad);
 
-		}
+        $this->assertNotEquals(48, $mazito->cantidad);
+    }
+
+    public function testCortar(){
+        $mazo = new Mazo("poker");
+        $mazo2 = $mazo->cortar();
+        $this->assertNotEquals($mazo,$mazo2);
+    }
+
+    public function testObtener(){
+        $mazo = new Mazo("poker");
+        $this->assertTrue(($mazo->obtenerCarta())!=null);
+    }
+
+    public function testTieneCartas(){
+        $mazo = new Mazo("españolas");
+        $this->assertEquals($mazo->cantidad, 50);
+        for($i=0; $i<30; $i++){
+            $mazo->obtenerCarta();
+        }
+        $this->assertEquals($mazo->cantidad, 20);
+    }
+
+    public function testAgregarCartas(){
+        $mazo = new Mazo("españolas");
+        $carta = $mazo->obtenerCarta();
+        $mazo->agregar($carta);
+        $mazo->agregar($carta);
+        $this->assertEquals($mazo->cantidad, 51);
+    }
 }
