@@ -32,9 +32,7 @@ class Carta {
 					break;
 					case 3:
 					 return "Corazones";
-					break;
 				}
-			break;
 			case "españolas":
 				switch($this->palo){
 					case 0:
@@ -48,9 +46,7 @@ class Carta {
 					break;
 					case 3:
 					return "Oro";
-					break;
 				}
-			break;
 		}
 	}
 }
