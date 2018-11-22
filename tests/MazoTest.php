@@ -62,4 +62,16 @@ class MazoTest extends TestCase {
         $mazo->agregar($carta);
         $this->assertEquals($mazo->cantidad, 51);
     }
+
+    public function testEsVacio(){
+        $mazo = new Mazo("españolas");
+        $this->assertFalse($mazo->vacio());
+        /**
+         *  El mazo tiene 50 cartas asi que despues de hacer esto tendra 0
+         */
+        for($i=0; $i<50; $i++){
+            $mazo->obtenerCarta();
+        }
+        $this->assertTrue($mazo->vacio());
+    }
 }

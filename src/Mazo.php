@@ -63,7 +63,7 @@ class Mazo {
 	}
 
 	public function vacio(){
-		if(cantidad == 0){
+		if($this->obtenerCantidad() == 0){
 			return True;
 		}
 		else{
