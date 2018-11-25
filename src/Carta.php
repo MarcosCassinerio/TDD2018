@@ -18,8 +18,10 @@ class Carta {
 	}
 
 	public function verPalo(){
+		//Aqui checkea el tipo de cartas
 		switch ($this->tipo) {
 			case "poker":
+				//Aqui checkea el palo dentro del tipo de cartas
 				switch ($this->palo) {
 					case 0:
 					 return "Picas";
